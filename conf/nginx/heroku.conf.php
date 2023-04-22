@@ -20,6 +20,10 @@ http {
 
 	fastcgi_buffers 256 4k;
 
+	proxy_buffer_size   128k;
+  	proxy_buffers   4 256k;
+  	proxy_busy_buffers_size   256k;
+
 	# define an easy to reference name that can be used in fastgi_pass
 	upstream heroku-fcgi {
 		#server 127.0.0.1:4999 max_fails=3 fail_timeout=3s;
