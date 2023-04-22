@@ -20,9 +20,8 @@ http {
 
 	fastcgi_buffers 256 4k;
 
-	proxy_buffer_size   128k;
-  	proxy_buffers   4 256k;
-  	proxy_busy_buffers_size   256k;
+	proxy_buffering off;
+    proxy_request_buffering off;
 
 	# define an easy to reference name that can be used in fastgi_pass
 	upstream heroku-fcgi {
